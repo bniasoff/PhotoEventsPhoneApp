@@ -1,52 +1,28 @@
-// import React, { useState } from "react";
-// import { View, Switch, Text } from "react-native";
-// import styles from "./Styles";
-// // import { StyleSheet } from "react-native";
-
-// export default function App() {
-//   const [Paid, setPaid] = useState(false);
-//   const toggleSwitch = () => {
-//     setPaid((previousState) => !previousState);
-//   };
-//   return (
-//     <View style={styles.container}>
-//       <Text style={styles.text}> {Paid ? "" : "Not"} Paid</Text>
-
-//       <View style={styles.SwitchContainer}>
-//         <Switch
-//           trackColor={{ false: "#767577", true: "#81b0ff" }}
-//           thumbColor={Paid ? "green" : "red"}
-//           ios_backgroundColor="#3e3e3e"
-//           onValueChange={toggleSwitch}
-//           value={Paid}
-//         />
-//       </View>
-//     </View>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     // marginTop: StatusBar.currentHeight || 0,
-//   },
-//   //   item: {
-//   //     padding: 20,
-//   //     marginVertical: 8,
-//   //     marginHorizontal: 16,
-//   //   },
-//   //   title: {
-//   //     fontSize: 32,
-//   //   },
-// });
-
-// export default App;
-
-import ListingsScreen2 from "./app/screens/ListingsScreen2";
-import DropdownScreen from "./app/components/DropDownComponent";
+import React, { useState } from "react";
+import { View, Switch } from "react-native";
+import styles from "./styles";
 
 export default function App() {
-  return <ListingsScreen2 />;
+  const [location, setLocation] = useState(false);
+  const [mic, setMic] = useState(false);
+  const [storage, setStorage] = useState(false);
+
+  const toggleSwitch = () => {
+    setLocation((previousState) => !previousState);
+  };
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>Location is {location ? "On : Off"}</Text>
+
+      <Switch
+        trackColor={{ false: "#767577", true: "#81b0ff" }}
+        thumbColor={location ? "#f5dd4b" : "#f4f3f4"}
+        ios_backgroundColor="#3e3e3e"
+        onValueChange={toggleSwitch}
+        value={location}
+      />
+    </View>
+  );
 }
 
 // import React, { useState } from "react";
